@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>معلومات الحساب</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -77,17 +77,95 @@
             margin-bottom: 20px;
         }
 
-        /* بەشی دیزاینی لۆگۆکە */
-        .brand-logo {
-            max-width: 140px;
-            height: auto;
+        /* --- سەرەتای دیزاینی لۆگۆ بە HTML/CSS --- */
+        .css-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin-bottom: 15px;
-            filter: drop-shadow(0 0 10px rgba(234, 179, 8, 0.3));
-            transition: transform 0.3s ease;
+            user-select: none;
         }
-        .brand-logo:hover {
-            transform: scale(1.05);
+
+        .logo-icon-wrapper {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5px;
         }
+
+        /* بازنەی ئاڵتونی دەورپشتی H */
+        .gold-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 5px solid transparent;
+            border-top: 5px solid #dfb15b;
+            border-bottom: 5px solid #fce8a4;
+            border-left: 5px solid #a8792a;
+            transform: rotate(-30deg);
+            box-shadow: inset 0 0 10px rgba(223, 177, 91, 0.2);
+        }
+
+        /* پیتی H بە ڕەنگی ئاڵتونی */
+        .letter-h {
+            font-family: 'Poppins', sans-serif;
+            font-size: 46px;
+            font-weight: 900;
+            font-style: italic;
+            background: linear-gradient(135deg, #fce8a4 0%, #dfb15b 50%, #92651d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            z-index: 1;
+            transform: skewX(-8deg);
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.8));
+        }
+
+        /* دەقی HAROON */
+        .brand-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(180deg, #fce8a4 0%, #d4a347 60%, #8a5d16 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        /* دەقی Center لەگەڵ هێڵەکان */
+        .brand-subtext {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .brand-subtext span {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+
+        .brand-subtext::before,
+        .brand-subtext::after {
+            content: '';
+            height: 1.5px;
+            width: 35px;
+            background: linear-gradient(90deg, rgba(223, 177, 91, 0), #dfb15b);
+        }
+        .brand-subtext::after {
+            background: linear-gradient(90deg, #dfb15b, rgba(223, 177, 91, 0));
+        }
+        /* --- کۆتایی دیزاینی لۆگۆ --- */
 
         .account-badge {
             background: rgba(3, 7, 18, 0.9);
@@ -405,8 +483,18 @@
         </a>
 
         <div class="logo-container">
-            <!-- لۆگۆکە لێرەدا زیادکراوە -->
-            <img src="logo.png" alt="HAROON Center" class="brand-logo">
+            <!-- لۆگۆی دروستکراو بە HTML/CSS -->
+            <div class="css-logo">
+                <div class="logo-icon-wrapper">
+                    <div class="gold-ring"></div>
+                    <div class="letter-h">H</div>
+                </div>
+                <div class="brand-name">HAROON</div>
+                <div class="brand-subtext">
+                    <span>Center</span>
+                </div>
+            </div>
+
             <div class="account-badge">
                 <span>الحساب:</span>
                 <input type="text" id="accSmallInput" value="" readonly>
