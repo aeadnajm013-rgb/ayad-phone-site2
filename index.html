@@ -73,8 +73,20 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 25px;
+            margin-top: 15px;
             margin-bottom: 20px;
+        }
+
+        /* بەشی دیزاینی لۆگۆکە */
+        .brand-logo {
+            max-width: 140px;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 10px rgba(234, 179, 8, 0.3));
+            transition: transform 0.3s ease;
+        }
+        .brand-logo:hover {
+            transform: scale(1.05);
         }
 
         .account-badge {
@@ -393,6 +405,8 @@
         </a>
 
         <div class="logo-container">
+            <!-- لۆگۆکە لێرەدا زیادکراوە -->
+            <img src="logo.png" alt="HAROON Center" class="brand-logo">
             <div class="account-badge">
                 <span>الحساب:</span>
                 <input type="text" id="accSmallInput" value="" readonly>
